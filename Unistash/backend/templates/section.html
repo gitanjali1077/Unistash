@@ -1,0 +1,730 @@
+
+{% load staticfiles %}
+<!DOCTYPE html>
+
+<html lang="">
+<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
+<head>
+<title>Unistash</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+
+
+<link href="{% static 'content.css' %}" rel="stylesheet" type="text/css" media="all">
+
+<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap-theme.css" />
+	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bangers" type="text/css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+</head>
+<script>
+
+
+
+function hide( evt , course){
+  var tab= document.getElementsByClassName("tab");
+        tab[0].style.display = "none";
+ 
+var course= document.getElementById(course);
+    course.style.display="block";
+  
+
+}
+
+var i=0;
+function sidebar(){
+
+var m=document.getElementsByClassName("menuDisplayed");
+if(i%2==0)
+ {
+m[0].style.display="block";
+this.i=1;
+}
+else
+{
+m[0].style.display="none";
+i=0;
+}
+
+}
+
+function bod(){
+ 
+if(i==1){
+ 
+m=document.getElementsByClassName("menuDisplayed");
+m[0].style.display="none";
+
+}
+
+
+}
+
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+
+function sem(evt ,sem,branch){
+semes = document.getElementsByClassName(branch);
+  for (i = 0; i < semes.length; i++) {
+        semes[i].style.display = "none";
+    } 
+ document.getElementById(sem).style.display = "block";
+
+}
+
+
+
+// Get the element with id="defaultOpen" and click on it
+//document.getElementById("defaultOpen").click();
+</script>
+
+
+<style>
+h3{
+color:black;
+}
+
+ul,li{
+color:black;
+}
+body{
+background:none;}
+
+.main-body{
+ height:800px;
+
+}
+
+
+.sidebar-nav li a:hover {
+    background: #16A085;
+}
+
+.links a{
+color:black;
+ margin-left:30px;}
+
+
+div.tab {
+
+border-radius: 5px;
+background-color:black;
+color:white;
+    overflow: auto;  
+    border: 1px solid #ccc;
+   // background-color: #f1f1f1;
+   display: block;
+width:90%;
+
+}
+/*  for the tab1   */
+
+div.tab1 button {
+    background-color: inherit;
+    float: left;
+color:white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+overflow:auto;
+}
+
+
+
+/* Change background color of buttons on hover */
+div.tab1 button:hover {
+color:white;
+    }
+
+/* Create an active/current tablink class */
+div.tab1 button.active {
+    /*background-color: #ccc;*/
+background-color: #ddd;
+width:80px;
+color:black;
+
+}
+
+/********************************************************/
+div.tab1 {
+    overflow: auto;
+    border: 1px solid #ccc;
+   border-radius: 5px;
+background-color:black;
+color:white;
+display:none;
+width:600px;
+  -webkit-transition: width 2s;
+
+
+}
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+width:80px;
+color:white;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+color:white;
+    font-size: 80%;   /* 17px  */
+}
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #16A085;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    background-color: #E5735B;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+border-radius: 5px;
+height:96px;
+width:500px;  /*700pv*/
+}
+
+.ab{
+ border: 1px solid #ccc;
+    border-top: none;
+border-radius: 5px;
+
+background-color:black;
+width:110px;  /*110px*/
+height:400px;
+margin-top:-30px;
+margin-left:-8px; 
+color:white;
+  }
+#style-2::-webkit-scrollbar
+{
+	width: 8px;
+}
+
+#style-2::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: black;
+}
+
+
+#style-3::-webkit-scrollbar
+{
+	height: 5px;
+}
+
+#style-3::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: black;
+}
+
+.links{
+overflow-y: auto;
+overflow-x: auto;
+
+margin-top: -420px;
+margin-left: 94px;
+height:397px;
+width:495px;   /*  590px   */
+background-color:white;
+border-radius:5px;
+margin-bottom:200px;
+}
+
+.icon{
+color:black;
+display: none;
+}
+/* Style the close button */
+.topright {
+    float: right;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.topright:hover {color: red;}
+.tablinks{
+padding :30px;
+margin-left:30px;
+}
+
+<!-- ######################   responsiveness   ########------>
+
+@media (max-width: 600px){
+.menuDisplayed{
+  display:none;
+}
+
+
+.links{
+overflow-y: auto;
+overflow-x: auto;
+
+margin-top: -406px;
+margin-left:28%;
+height:397px;
+width:98%;   /*  590px   */
+background-color:white;
+border-radius:5px;
+margin-bottom:200px;
+}
+
+div.tab1 {
+    overflow: auto;
+    border: 1px solid #ccc;
+   border-radius: 5px;
+background-color:black;
+color:white;
+display:none;
+width:59%;
+  -webkit-transition: width 2s;
+
+
+}
+
+.ab{
+ border: 1px solid #ccc;
+    border-top: none;
+border-radius: 5px;
+
+background-color:black;
+width:35%;  /*110px*/
+height:400px;
+margin-top:-20px;
+margin-left:-8px; 
+color:white;
+  }
+.icon{
+color:white;
+font-size:210%;
+display: block;
+cursor:pointer;
+}
+
+
+
+@media (max-width: 905px){
+.menuDisplayed{
+  display:none;
+}
+.icon{
+color:white;
+font-size:210%;
+display: block;
+cursor:pointer;
+}
+
+}
+
+
+</style>
+
+<body >
+
+
+
+<div class="bod" onclick="bod()">
+
+
+ <div class="main-body">   
+<!-- Sidebar -->
+
+</div>
+
+<div class="tab" style="margin-top:-800px; color:white; ">
+
+  <button class="tablinks" onclick="hide(event, 'btech')" >B.Tech</button>
+  <button class="tablinks" onclick="hide(event, 'mtech')">M.Tech</button>
+  <button class="tablinks" onclick="hide(event, 'mca')">MCA</button>
+  <button class="tablinks" onclick="hide(event, 'phd')">Ph.D</button>
+
+</div>
+
+
+<!--###############################################################-->
+
+
+
+
+
+<!--  ends here   -->
+<!---    content for a particular course  B.  Tech-->
+
+<div class="tab1" id="btech" style="margin-top:-800px; ">
+
+  <button class="tablinks" onclick="openCity(event, 'cse')" >CS</button>
+  <button class="tablinks" onclick="openCity(event, 'it')">IT</button>
+  <button class="tablinks" onclick="openCity(event, 'ece')">ECE</button>
+  <button class="tablinks" onclick="openCity(event, 'mae')">MAE</button>
+
+</div>
+
+<div id="cse" class="tabcontent" style=" color:white">
+  <h4 style="margin-left:-45px"><ul>
+<div class="ab">
+<p> <button class="tablinks1" onclick="sem(event, 'sem1' ,'cssem')">SEM 1</button></p>
+<p> <button class="tablinks1" onclick="sem(event, 'sem2' ,'cssem')">SEM 2</button></p>
+<p> <button class="tablinks1" onclick="sem(event, 'sem3' ,'cssem')">SEM 3</button></p>
+<p> <button class="tablinks1" onclick="sem(event, 'sem4' ,'cssem')">SEM 4</button></p>
+<p> <button class="tablinks1" onclick="sem(event, 'sem5' ,'cssem')">SEM 5</button></p>
+<p> <button class="tablinks1" onclick="sem(event, 'sem6' ,'cssem')">SEM 6</button></p>
+<p> <button class="tablinks1" onclick="sem(event, 'sem7' ,'cssem')">SEM 7</button></p>
+<p> <button class="tablinks1" onclick="sem(event, 'sem8' ,'cssem')">SEM 8</button></p>
+
+</div></ul></h4>
+<div class="links" id="style-2">
+<div id="sem1" class="cssem">
+ <h3>Semester First</h3>
+<ul>
+<li><a href="{%url 'files' 'Lectures' %}" > Lecture</a></li>
+<li><a href="#" > maths</a></li>
+<li><a href="#" >eng</a></li>
+</div>
+
+<div id="sem2" class="cssem">
+<a href="#" >eng</a><br>
+<a href="#" > hindi</a><br>
+<a href="#" > maths</a>
+</div>
+<div  id="sem3" class="cssem">
+<a href="#" >eng</a><br>
+<a href="#" > sem3</a><br>
+<a href="#" > maths</a>
+</div>
+<div  id="sem4" class="cssem">
+<a href="#" >4</a><br>
+<a href="#" > hindi</a><br>
+<a href="#" > maths</a>
+</div>
+<div  id="sem5" class="cssem">
+<a href="#" >5</a><br>
+<a href="#" > hindi</a><br>
+<a href="#" > maths</a>
+</div>
+<div  id="sem6" class="cssem">
+<a href="#" >6</a><br>
+<a href="#" > hindi</a><br>
+<a href="#" > maths</a>
+</div>
+<div  id="sem7" class="cssem">
+<a href="#" >7</a><br>
+<a href="#" > hindi</a><br>
+<a href="#" > maths</a>
+</div>
+<div  id="sem8" class="cssem">
+<a href="#" >8</a><br>
+<a href="#" > hindi</a><br>
+<a href="#" > maths</a>
+</div>
+
+</div>   <!---  link class ends here  -->
+
+
+</div><!---  cse branch ends here-->
+
+<!--   content for it starts from here  -->
+
+
+<div id="it" class="tabcontent" style=" ">
+  <h4 style="margin-left:-45px"><ul>
+<div class="ab">
+<p> <button class="tablinks1" onclick="sem(event, 'semi1', 'itsem')">SEM 1</button></p>
+<p> <button class="tablinks1" onclick="sem(event, 'semi2', 'itsem')">SEM 2</button></p>
+<p> <button class="tablinks1" onclick="sem(event, 'semi3', 'itsem')">SEM 3</button></p>
+<p> <button class="tablinks1" onclick="sem(event, 'semi4', 'itsem')">SEM 4</button></p>
+<p> <button class="tablinks1" onclick="sem(event, 'semi5', 'itsem')">SEM 5</button></p>
+<p> <button class="tablinks1" onclick="sem(event, 'semi6', 'itsem')">SEM 6</button></p>
+<p> <button class="tablinks1" onclick="sem(event, 'semi7', 'itsem')">SEM 7</button></p>
+<p> <button class="tablinks1" onclick="sem(event, 'semi8', 'itsem')">SEM 8</button></p>
+
+</div></ul></h4>
+<div class="links" id="style-2">
+<div id="semi1" class="itsem">
+<a href="#" > maths</a><br>
+<a href="#" > maths</a><br>
+<a href="#" >eng</a><br>
+</div>
+
+<div id="semi2" class="itsem">
+<a href="#" >eng</a><br>
+<a href="#" > hindi</a><br>
+<a href="#" > maths</a>
+</div>
+<div  id="semi3" class="itsem">
+<a href="#" >eng</a><br>
+<a href="#" >it sem3</a><br>
+<a href="#" > maths</a>
+</div>
+<div  id="semi4" class="itsem">
+<a href="#" >it4</a><br>
+<a href="#" > hindi</a><br>
+<a href="#" > maths</a>
+</div>
+<div  id="semi5" class="itsem">
+<a href="#" >it5</a><br>
+<a href="#" > hindi</a><br>
+<a href="#" > maths</a>
+</div>
+<div  id="semi6" class="itsem">
+<a href="#" >it6</a><br>
+<a href="#" > hindi</a><br>
+<a href="#" > maths</a>
+</div>
+<div  id="semi7" class="itsem">
+<a href="#" >it7</a><br>
+<a href="#" > hindi</a><br>
+<a href="#" > maths</a>
+</div>
+<div  id="semi8" class="itsem">
+<a href="#" >it8</a><br>
+<a href="#" > hindi</a><br>
+<a href="#" > maths</a>
+</div>
+
+</div>   <!---  link class ends here  -->
+
+
+</div>
+
+<!--   content for it starts from here  -->
+
+
+<div id="ece" class="tabcontent" style=" ">
+  <h4 style="margin-left:-45px"><ul>
+<div class="ab">
+<p> <button class="tablinks1" onclick="sem(event, 'seme1', 'esem')">SEM 1</button></p>
+<p> <button class="tablinks1" onclick="sem(event, 'seme2', 'esem')">SEM 2</button></p>
+<p> <button class="tablinks1" onclick="sem(event, 'seme3', 'esem')">SEM 3</button></p>
+<p> <button class="tablinks1" onclick="sem(event, 'seme4', 'esem')">SEM 4</button></p>
+<p> <button class="tablinks1" onclick="sem(event, 'seme5', 'esem')">SEM 5</button></p>
+<p> <button class="tablinks1" onclick="sem(event, 'seme6', 'esem')">SEM 6</button></p>
+<p> <button class="tablinks1" onclick="sem(event, 'seme7', 'esem')">SEM 7</button></p>
+<p> <button class="tablinks1" onclick="sem(event, 'seme8', 'esem')">SEM 8</button></p>
+
+</div></ul></h4>
+<div class="links" id="style-2">
+<div id="seme1" class="esem">
+<a href="#" > maths</a><br>
+<a href="#" > maths</a><br>
+<a href="#" >eng</a><br>
+</div>
+
+<div id="seme2" class="esem">
+<a href="#" >eng</a><br>
+<a href="#" > hindi</a><br>
+<a href="#" > maths</a>
+</div>
+<div  id="seme3" class="esem">
+<a href="#" >eng</a><br>
+<a href="#" >it sem3</a><br>
+<a href="#" > maths</a>
+</div>
+<div  id="seme4" class="esem">
+<a href="#" >it4</a><br>
+<a href="#" > hindi</a><br>
+<a href="#" > maths</a>
+</div>
+<div  id="seme5" class="itsem">
+<a href="#" >it5</a><br>
+<a href="#" > hindi</a><br>
+<a href="#" > maths</a>
+</div>
+<div  id="seme6" class="esem">
+<a href="#" >it6</a><br>
+<a href="#" > hindi</a><br>
+<a href="#" > maths</a>
+</div>
+<div  id="seme7" class="esem">
+<a href="#" >it7</a><br>
+<a href="#" > hindi</a><br>
+<a href="#" > maths</a>
+</div>
+<div  id="seme8" class="esem">
+<a href="#" >it8</a><br>
+<a href="#" > hindi</a><br>
+<a href="#" > maths</a>
+</div>
+
+</div>   <!---  link class ends here  -->
+
+
+</div>
+<!--  ece ends here  -->
+
+
+<!--   content for mae starts from here  -->
+
+
+<div id="mae" class="tabcontent" style=" ">
+  <h4 style="margin-left:-45px"><ul>
+<div class="ab">
+<p> <button class="tablinks1" onclick="sem(event, 'semm1', 'msem')">SEM 1</button></p>
+<p> <button class="tablinks1" onclick="sem(event, 'semm2', 'msem')">SEM 2</button></p>
+<p> <button class="tablinks1" onclick="sem(event, 'semm3', 'msem')">SEM 3</button></p>
+<p> <button class="tablinks1" onclick="sem(event, 'semm4', 'msem')">SEM 4</button></p>
+<p> <button class="tablinks1" onclick="sem(event, 'semm5', 'msem')">SEM 5</button></p>
+<p> <button class="tablinks1" onclick="sem(event, 'semm6', 'msem')">SEM 6</button></p>
+<p> <button class="tablinks1" onclick="sem(event, 'semm7', 'msem')">SEM 7</button></p>
+<p> <button class="tablinks1" onclick="sem(event, 'semm8', 'msem')">SEM 8</button></p>
+
+</div></ul></h4>
+<div class="links" id="style-2">
+<div id="semm1" class="msem">
+<a href="#" > maths</a><br>
+<a href="#" > maths</a><br>
+<a href="#" >eng</a><br>
+</div>
+
+<div id="semm2" class="msem">
+<a href="#" >eng</a><br>
+<a href="#" > hindi</a><br>
+<a href="#" > maths</a>
+</div>
+<div  id="semm3" class="msem">
+<a href="#" >eng</a><br>
+<a href="#" >it sem3</a><br>
+<a href="#" > maths</a>
+</div>
+<div  id="semm4" class="msem">
+<a href="#" >it4</a><br>
+<a href="#" > hindi</a><br>
+<a href="#" > maths</a>
+</div>
+<div  id="semm5" class="msem">
+<a href="#" >it5</a><br>
+<a href="#" > hindi</a><br>
+<a href="#" > maths</a>
+</div>
+<div  id="semm6" class="msem">
+<a href="#" >it6</a><br>
+<a href="#" > hindi</a><br>
+<a href="#" > maths</a>
+</div>
+<div  id="semm7" class="msem">
+<a href="#" >it7</a><br>
+<a href="#" > hindi</a><br>
+<a href="#" > maths</a>
+</div>
+<div  id="semm8" class="msem">
+<a href="#" >it8</a><br>
+<a href="#" > hindi</a><br>
+<a href="#" > maths</a>
+</div>
+
+</div>   <!---  link class ends here  -->
+
+
+</div>
+
+<!----  content for the btech branches is here-->
+
+
+
+
+
+<!--  which ends here-->
+
+<!--  content for the course mtech -->
+
+<div class="tab1" id="mtech" style="margin-top:-500px; ">
+
+  <button class="tablinks" onclick="openCity(event, )" >CS</button>
+  <button class="tablinks" onclick="openCity(event, )">IT</button>
+  <button class="tablinks" onclick="openCity(event, )">ECE</button>
+  <button class="tablinks" onclick="openCity(event, )">MAE</button>
+
+</div>
+
+<!-----   content for course mtech ends here  -->
+
+
+<!--  content for the course phd -->
+
+<div class="tab1" id="mtech" style="margin-top:-500px; margin-left:25%">
+
+  <button class="tablinks" onclick="openCity(event, )" >CS</button>
+  <button class="tablinks" onclick="openCity(event, )">IT</button>
+  <button class="tablinks" onclick="openCity(event, )">ECE</button>
+  <button class="tablinks" onclick="openCity(event, )">MAE</button>
+
+</div>
+
+<!-----   content for course phd ends here  -->
+
+<!--  content for the course mtech -->
+
+<div class="tab1" id="mca" style="margin-top:-500px; margin-left:25%">
+
+  <button class="tablinks" onclick="openCity(event, )" >CS</button>
+  <button class="tablinks" onclick="openCity(event, )">IT</button>
+  <button class="tablinks" onclick="openCity(event, )">ECE</button>
+  <button class="tablinks" onclick="openCity(event, )">MAE</button>
+
+</div>
+
+<!-----   content for course mca ends here  -->
+
+
+
+</div>     <!--  bod ends here   -->
+<!---  which ends here  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
+
+
+
+
+
+
+
+
+
+
+<!---  which ends here  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
+
+
+
+
+<script src="{% static 'layout/scripts/jquery.min.js' %}"></script>
+<script src="layout/scripts/jquery.backtotop.js"></script>
+<script src="layout/scripts/jquery.mobilemenu.js"></script>
+</body>
+</html>

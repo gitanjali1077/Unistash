@@ -1,0 +1,594 @@
+
+{%  load staticfiles   %}
+
+<!DOCTYPE html>
+
+<html lang="">
+
+<head>
+<title>Unistash</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="{% static 'layout/styles/layout.css'  %}" rel="stylesheet" type="text/css" media="all">
+<link href="{% static 'content.css'  %}" rel="stylesheet" type="text/css" media="all">
+
+<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap-theme.css" />
+	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bangers" type="text/css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/main.css ' %} ">
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+ <script src="{% static 'content.js' %}"></script>
+<link href="{% static 'content.css'  %}" rel="stylesheet" type="text/css" media="all">
+
+</head>
+<script>
+
+
+
+function hide( evt , course){
+  var tab= document.getElementsByClassName("tab");
+        tab[0].style.display = "none";
+ 
+var course= document.getElementById(course);
+    course.style.display="block";
+  
+
+}
+
+var i=0;
+function sidebar(){
+
+var m=document.getElementsByClassName("menuDisplayed");
+if(i%2==0)
+ {
+m[0].style.display="block";
+this.i=1;
+}
+else
+{
+m[0].style.display="none";
+i=0;
+}
+
+}
+$(window).resize(bod);
+
+
+function bod(){
+ 
+var mq=window.matchMedia(" (min-width: 650px)");
+if(mq>650){
+  m=document.getElementsByClassName("menuDisplayed");
+   
+m[0].style.display="block";
+i=0;
+return;
+}
+
+ 
+}
+
+
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+
+function sem(evt ,sem,branch){
+semes = document.getElementsByClassName(branch);
+  for (i = 0; i < semes.length; i++) {
+        semes[i].style.display = "none";
+    } 
+ document.getElementById(sem).style.display = "block";
+
+}
+
+
+
+// Get the element with id="defaultOpen" and click on it
+//document.getElementById("defaultOpen").click();
+</script>
+
+
+<style>
+@media (max-width: 2900px){
+.menuDisplayed{
+  display:block;
+}
+}
+body{
+   background: url({% static 'content.jpg' %}) no-repeat;
+ background-size:100% 100%;
+overflow-x:hidden;
+}
+.menuDisplayed{
+display:block;
+}
+.icon{
+color:white;
+font-size:210%;
+display: none;
+cursor:pointer;
+}
+.content{
+margin-left:300px;
+margin-top:-40%;
+
+}
+
+
+
+
+@media (max-width: 650px){
+.content{
+overflow-x:scroll;
+width:90%;
+height:52%;
+margin-left:0px;
+margin-top:-40%;
+
+}
+
+.menuDisplayed{
+  display:none;
+}
+.icon{
+color:white;
+font-size:210%;
+display:block;
+cursor:pointer;
+}
+}
+
+@media (max-width: 950px){
+.menuDisplayed{
+  display:none;
+}
+.icon{
+color:white;
+font-size:210%;
+display: block;
+cursor:pointer;
+}
+.content{
+width:90%;
+overflow-x:scroll;
+
+height:42%;
+margin-left:40px;
+margin-top:-500px;
+
+}
+}
+
+.main-body{
+height:600px;
+
+}
+
+#sidebar-wrapper {
+    z-index: 1;
+    position: absolute;
+    width: 0;
+    height: 480px;
+    overflow-y: hidden;
+    background: #2C3E50;
+    opacity: 0.9;
+ /* margin-top:600px;*/
+}
+
+/* Always take up entire screen */
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+    
+}
+
+
+/* Change with of sidebar from 0 to 250px */
+#wrapper.menuDisplayed #sidebar-wrapper {
+    width: 250px;
+}
+
+/* Since we added left padding, we need to shrink the width by 250px */
+#wrapper.menuDisplayed #page-content-wrapper {
+    padding-left: 250px;
+}
+
+
+/* Sidebar styling - the entire ul list */
+.sidebar-nav {
+    padding: 0;
+    list-style: none;
+
+}
+
+
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #ddd;
+}
+
+.sidebar-nav li a:hover {
+    background: #16A085;
+}
+
+.links a{
+color:black;
+ margin-left:30px;}
+
+.unistash{font-family: 'Permanent Marker', cursive; font-size:80px; text-align:center;}
+.unistashheads{font-family: 'Bangers', cursive;}
+.unistashimage{width:80px; height:80px;}
+.about{padding-left:5px ; padding-right:5px; padding-bottom:3px;}
+.photos{width:200px;height:200px; padding-left:20px; padding-right:20px;}
+.photoshead{width:250px;height:250px; padding-left:20px; padding-right:20px;}
+.w3-hover-opacity:hover{opacity:0.60;-webkit-backface-visibility:hidden}
+
+
+
+div.tab {
+border-radius: 5px;
+background-color:black;
+color:white;
+    //overflow: hidden;
+    border: 1px solid #ccc;
+   // background-color: #f1f1f1;
+   display: block;
+width:50%;
+}
+/*  for the tab1   */
+
+div.tab1 button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+
+
+/* Change background color of buttons on hover */
+div.tab1 button:hover {
+    }
+
+/* Create an active/current tablink class */
+div.tab1 button.active {
+    /*background-color: #ccc;*/
+background-color: #ddd;
+width:80px;
+color:black;
+
+}
+
+/********************************************************/
+/*div.tab1 {
+   // overflow: hidden;
+    border: 1px solid #ccc;
+   border-radius: 5px;
+background-color:black;
+color:white;
+display:none;
+width:600px;
+  -webkit-transition: width 2s;
+
+
+}  */
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+width:80px;
+
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 80%;   /* 17px  */
+}
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #16A085;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    background-color: #E5735B;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+border-radius: 5px;
+height:396px;
+width:500px;  /*700pv*/
+}
+
+.ab{
+ border: 1px solid #ccc;
+    border-top: none;
+border-radius: 5px;
+
+background-color:black;
+width:110px;  /*110px*/
+height:400px;
+margin-top:-20px;
+margin-left:-8px; 
+color:white;
+  }
+#style-2::-webkit-scrollbar
+{
+	width: 5px;
+}
+
+#style-2::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: black;
+}
+#style-3::-webkit-scrollbar
+{
+	height: 5px;
+width: 5px;
+}
+
+#style-3::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: black;
+}
+
+
+.links{
+overflow-y: auto;
+margin-top: -406px;
+margin-left: 94px;
+height:397px;
+width:495px;   /*  590px   */
+background-color:white;
+border-radius:5px;
+margin-bottom:200px;
+}
+
+
+/* Style the close button */
+.topright {
+    float: right;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.topright:hover {color: red;}
+.tablinks{
+padding :30px;
+margin-left:30px;
+}
+
+
+<!-- ######################   responsiveness   ########------>
+</style>
+
+<body id="top">
+
+
+
+
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row1" style="background-image:url({% static 'content.jpg' %} ) no-repeat;">
+  <header id="header" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <h1><a href="index.html">Unistash</a></h1>
+    <p>Everything At One Stop</p>
+    <!-- ################################################################################################ -->
+  </header>
+</div>
+<!-- ################################################################################################ -->
+<div class="wrapper row4">
+  <nav id="mainav" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <ul class="clear">
+      <li class="active"><a href="{% url 'function' 'index' %}">Home</a></li>
+     <!--<li><a class="drop" href="#">Pages</a>
+        <ul>
+          <li><a href="pages/gallery.html">home</a></li>
+          <li><a href="pages/full-width.html">about us</a></li>
+          <li><a href="pages/sidebar-left.html">content</a></li>
+          <li><a href="pages/sidebar-right.html">contact us</a></li>
+          <li><a href="pages/basic-grid.html">Basic Grid</a></li>
+        </ul>
+      </li>
+      <li><a class="drop" href="{% url 'function' 'index' %}">content</a>
+        <ul>
+          <li><a href="#">notes</a></li>
+          <li><a class="drop" href="#">Level 2 + Drop</a>
+            <ul>
+              <li><a href="#">Level 3</a></li>
+              <li><a href="#">Level 3</a></li>
+              <li><a href="#">Level 3</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Level 2</a></li>
+        </ul>
+      </li>
+      -->
+      <li><a href="{% url 'function' 'content' %}">Content</a></li>
+      <li><a href="{% url 'function' 'contactUs' %}">Contact us</a></li>
+      <li><a href="#">About Us</a></li>
+     <li><a href="#">Interviews</a></li> 
+    </ul>
+    <!-- ################################################################################################ -->
+  </nav>
+</div>
+<br>
+<div class="icon">
+<a id="nav-toggle" onclick="sidebar()">&#9776;</a>
+</div>
+
+<div class="bod" >
+
+
+ <div class="main-body">   
+<!-- Sidebar -->
+
+        <div id="wrapper" class="menuDisplayed">
+            
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+<br>
+              	<li><a href="#">Notices</a></li>
+        		<li><a href="#">Timetables</a></li>
+        		<li><a href="#">Results</a></li>
+        		<li><a href="content.html">Notes</a></li>
+        		<li><a href="question papers.html">Question papers</a></li> 
+            <li><a href="lab practicals.html">Lab Practicals</a></li>
+        		<li><a href="#">Lesson plan</a></li>
+        		<li><a href="#">Interviews</a></li>
+        		<li><a href="#">Copyright</a></li>
+        		<li><a href="#">Contribute</a></li>              
+        	</ul>
+        </div>
+</div>
+
+</div>
+<!--  content display  -->
+<div class="content" id="style-3">
+
+
+<iframe scrolling="no" border="none" id="fram" style="height:500px;width:630px; overflow-y:hidden " src="{% url 'function' 'section' %}">  </iframe></p>
+
+
+</div>
+
+     <!--  bod ends here   -->
+<!---  which ends here  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
+
+</div>
+
+<!-- end  --################################################################################################ -->
+
+
+<div class="wrapper row4">
+  <footer id="footer" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <div class="one_third first">
+      <h6 class="heading">UNISTASH</h6>
+      <ul class="nospace btmspace-30 linklist contact">
+        <li><i class="fa fa-map-marker"></i>
+          <address>
+          INDIRA GANDHI DELHI TECHNICAL UNIVERSITY FOR WOMEN
+          KASHMERE GATE
+           New Delhi
+           110006
+           India
+          </address>
+        </li>
+        <li><i class="fa fa-phone"></i> +00 (123) 456 7890--</li>
+        <li><i class="fa fa-envelope-o"></i>igdtunistash@gmail.com </li>
+      </ul>
+      <ul class="faico clear">
+        <li><a class="faicon-facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="faicon-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+       <!-- <li><a class="faicon-dribble" href="#"><i class="fa fa-dribbble"></i></a></li>
+        <li><a class="faicon-linkedin" href="#"><i class="fa fa-linkedin"></i></a></li> -->
+        <li><a class="faicon-google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
+        <!--<li><a class="faicon-vk" href="#"><i class="fa fa-vk"></i></a></li>-->
+      </ul>
+    </div>
+    <!--
+    <div class="one_third">
+      <h6 class="heading">In faucibus orci luctus</h6>
+      <ul class="nospace linklist">
+        <li>
+          <article>
+            <h2 class="nospace font-x1"><a href="#">Ultrices posuere cubilia</a></h2>
+            <time class="font-xs block btmspace-10" datetime="2045-04-06">Friday, 6<sup>th</sup> April 2045</time>
+            <p class="nospace">Lorem laoreet blandit donec mollis lacinia massa tincidunt malesuada [&hellip;]</p>
+          </article>
+        </li>
+        <li>
+          <article>
+            <h2 class="nospace font-x1"><a href="#">Curae cras tincidunt eros</a></h2>
+            <time class="font-xs block btmspace-10" datetime="2045-04-05">Thursday, 5<sup>th</sup> April 2045</time>
+            <p class="nospace">In id semper turpis in tristique dui ut ac mauris magna nunc eros enim [&hellip;]</p>
+          </article>
+        </li>
+      </ul>
+    </div>-->
+    <div class="one_third">
+      <h6 class="heading">Register Yourself For Updates</h6>
+      <p class="nospace btmspace-30"></p>
+      <form  name ="myform"method="post" action="/action_page_post.php" onsubmit="return validateForm();" method="post">
+        <fieldset>
+          <legend>Newsletter:</legend>
+          <input class="btmspace-15" type="text" value="" placeholder="Name">
+           <input class="btmspace-15" type="text" value="" placeholder="College">
+          <input class="btmspace-15" type="Email" value="" placeholder="Email">
+          <button type="submit" name="submit" value="submit" onsubmit= validate() >Submit</button>
+         
+        </fieldset>
+      </form>
+    </div> 
+    <!-- ################################################################################################ -->
+  </footer>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Copyright &copy; 2017 - All Rights Reserved - <a href="#">Domain Name</a></p>
+    <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="layout/scripts/jquery.min.js"></script>
+<script src="layout/scripts/jquery.backtotop.js"></script>
+<script src="layout/scripts/jquery.mobilemenu.js"></script>
+</body>
+</html>

@@ -1,0 +1,311 @@
+
+body{
+color:white;}
+
+@media (max-width: 2900px){
+.menuDisplayed{
+  display:block;
+}
+}
+
+#fram{
+scrolling:no ;
+ background:transparent; 
+width:608px; 
+ frameborder:0; 
+ height:450px; 
+align:center ;
+}
+
+
+
+body{
+   
+ background-size:100% 100%;
+overflow-x:hidden;
+}
+.menuDisplayed{
+display:block;
+}
+.icon{
+color:white;
+font-size:210%;
+display: none;
+cursor:pointer;
+}
+.content{
+margin-left:300px;
+margin-top:-40%;
+overflow-y:hidden;
+}
+
+@media (max-width: 650px){
+.content{
+overflow-x:scroll;
+width:90%;
+height:42%;
+margin-left:0px;
+margin-top:-40%;
+
+}
+
+.menuDisplayed{
+  display:none;
+}
+.icon{
+color:white;
+font-size:210%;
+display:block;
+cursor:pointer;
+}
+}
+
+@media (max-width: 950px){
+.menuDisplayed{
+  display:none;
+}
+.icon{
+color:white;
+font-size:210%;
+display: block;
+cursor:pointer;
+}
+.content{
+width:90%;
+overflow-x:scroll;
+
+height:42%;
+margin-left:40px;
+margin-top:-500px;
+
+}
+}
+
+.main-body{
+height:600px;
+
+}
+
+#sidebar-wrapper {
+    z-index: 1;
+    position: absolute;
+    width: 0;
+    height: 480px;
+    overflow-y: hidden;
+    background: #2C3E50;
+    opacity: 0.9;
+ /* margin-top:600px;*/
+}
+
+/* Always take up entire screen */
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+    
+}
+
+
+/* Change with of sidebar from 0 to 250px */
+#wrapper.menuDisplayed #sidebar-wrapper {
+    width: 250px;
+}
+
+/* Since we added left padding, we need to shrink the width by 250px */
+#wrapper.menuDisplayed #page-content-wrapper {
+    padding-left: 250px;
+}
+
+
+/* Sidebar styling - the entire ul list */
+.sidebar-nav {
+    padding: 0;
+    list-style: none;
+
+}
+
+
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #ddd;
+}
+
+.sidebar-nav li a:hover {
+    background: #16A085;
+}
+
+.links a{
+color:black;
+ margin-left:30px;}
+
+.unistash{font-family: 'Permanent Marker', cursive; font-size:80px; text-align:center;}
+.unistashheads{font-family: 'Bangers', cursive;}
+.unistashimage{width:80px; height:80px;}
+.about{padding-left:5px ; padding-right:5px; padding-bottom:3px;}
+.photos{width:200px;height:200px; padding-left:20px; padding-right:20px;}
+.photoshead{width:250px;height:250px; padding-left:20px; padding-right:20px;}
+.w3-hover-opacity:hover{opacity:0.60;-webkit-backface-visibility:hidden}
+
+
+
+div.tab {
+border-radius: 5px;
+background-color:black;
+color:red;
+   
+    border: 1px solid #ccc;
+   // background-color: #f1f1f1;
+   display: block;
+width:50%;
+}
+/*  for the tab1   */
+
+div.tab1 button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+
+
+/* Change background color of buttons on hover */
+div.tab1 button:hover {
+    }
+
+/* Create an active/current tablink class */
+div.tab1 button.active {
+    /*background-color: #ccc;*/
+background-color: #ddd;
+width:80px;
+color:black;
+
+}
+
+/********************************************************/
+div.tab1 {
+    overflow: hidden;
+    border: 1px solid #ccc;
+   border-radius: 5px;
+background-color:black;
+color:white;
+display:none;
+width:600px;
+  -webkit-transition: width 2s;
+
+
+}
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+width:80px;
+
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 80%;   /* 17px  */
+}
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #16A085;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    background-color: #E5735B;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+border-radius: 5px;
+height:396px;
+width:500px;  /*700pv*/
+}
+
+.ab{
+ border: 1px solid #ccc;
+    border-top: none;
+border-radius: 5px;
+
+background-color:black;
+width:110px;  /*110px*/
+height:400px;
+margin-top:-20px;
+margin-left:-8px; 
+color:white;
+  }
+#style-2::-webkit-scrollbar
+{
+	width: 5px;
+}
+
+#style-2::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: black;
+}
+#style-3::-webkit-scrollbar
+{
+	height: 5px;
+}
+
+#style-3::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: black;
+}
+
+
+.links{
+overflow-y: auto;
+margin-top: -406px;
+margin-left: 94px;
+height:397px;
+width:495px;   /*  590px   */
+background-color:white;
+border-radius:5px;
+margin-bottom:200px;
+}
+
+
+/* Style the close button */
+.topright {
+    float: right;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.topright:hover {color: red;}
+.tablinks{
+padding :30px;
+margin-left:30px;
+}
+
